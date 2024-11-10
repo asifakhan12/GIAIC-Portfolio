@@ -1,0 +1,98 @@
+/* Reset and body styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #786fa6;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+/* Navbar wrapper */
+.wrapper {
+  height: 60px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  border-bottom: 2px solid #78e08f;
+}
+
+/* Logo styling */
+.logo {
+  color: #6F1E51;
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* Main list for large screens */
+.mainlist {
+  display: flex;
+  list-style: none;
+}
+.link {
+  font-size: 20px;
+  text-decoration: none;
+  margin-right: 30px;
+  color: white;
+  transition: color 0.3s;
+}
+.link:hover {
+  color: #a5b1c2;
+}
+
+/* Sidebar styles */
+.sideBar {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 100%; /* Full screen width */
+  height: 100vh; /* Full screen height */
+  background-color: #1B1464;
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  transition: right 0.3s ease-in-out;
+}
+.sideBar.open {
+  right: 0;
+}
+
+/* Hamburger and Cross icons */
+.menuBar {
+  display: block;
+  cursor: pointer;
+  z-index: 1001; /* Above overlay */
+}
+.menuIcon,.cross {
+  font-size: 30px;
+  color: white;
+  transition: transform 0.3s;
+}
+
+/* Responsive design */
+@media (max-width: 700px) {
+  .mainlist {
+    display: none;
+  }
+  .logo {
+    font-size: 25px;
+  }
+}
+@media (min-width: 701px) {
+  .sideBar {
+    display: none;
+  }
+  .menuBar{
+    display: none;
+  }
+}
